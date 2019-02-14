@@ -1,0 +1,124 @@
+{
+  "name": "ui_library",
+  "version": "0.0.1",
+  "description": "A personal UI library built upon React and styled-components",
+  "main": "index.js",
+  "scripts": {
+    "test": "Node_Env=test jest",
+    "build": "webpack --env.mode production",
+    "build-dev": "webpack-dev-server --env.mode development --env.presets dev-server --open --hot",
+    "lint": "eslint --ext .jsx --ext .js .",
+    "test-dev": "Node_Env=test jest --watch",
+    "prepush": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tbhesswebber/PersonalReactUILibrary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tbhesswebber/PersonalReactUILibrary/issues"
+  },
+  "homepage": "https://github.com/Tbhesswebber/PersonalReactUILibrary#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-airbnb": "^3.2.0",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-webpack": "^0.11.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "jest-runner-eslint": "^0.7.3",
+    "lint-staged": "^8.1.4",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "regenerator-runtime": "^0.13.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "ololog": "^1.1.117",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "^4.1.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "airbnb",
+      "@babel/react"
+    ],
+    "ignore": [
+      "node_modules",
+      "compiled"
+    ],
+    "plugins": [
+      "@babel/proposal-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "prettier",
+      "plugin:react/recommended",
+      "prettier/react"
+    ],
+    "env": {
+      "jest": true,
+      "node": true,
+      "browser": true,
+      "es6": true
+    },
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": false
+        }
+      ]
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": "true"
+      }
+    }
+  },
+  "jest": {
+    "notify": true,
+    "notifyMode": "always"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
+  }
+}
